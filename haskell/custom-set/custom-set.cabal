@@ -1,0 +1,34 @@
+-- This file has been generated from package.yaml by hpack version 0.20.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: c123f9e3e023afd9f3caab1de8e923c9ea53bb2da2f2b88c94a0e5e8640e8d46
+
+name:           custom-set
+version:        1.3.0.5
+build-type:     Simple
+cabal-version:  >= 1.10
+
+library
+  hs-source-dirs:
+      src
+  build-depends:
+      base
+  exposed-modules:
+      CustomSet
+  other-modules:
+      Paths_custom_set
+  default-language: Haskell2010
+
+test-suite test
+  type: exitcode-stdio-1.0
+  main-is: Tests.hs
+  hs-source-dirs:
+      test
+  build-depends:
+      base
+    , custom-set
+    , hspec
+  other-modules:
+      Paths_custom_set
+  default-language: Haskell2010
