@@ -1,15 +1,11 @@
 module PigLatin (translate) where
 
 import Data.Tuple (swap)
-import Data.List (sort, group, (\\), span)
-import Control.Monad (filterM)
 
 data Syllable = Vowel | Consonant String deriving (Eq, Show)
 
-alphabet = ['a'..'z']
 vowels = ['a','e','i','o','u']
 vowelsInner = 'y':vowels
-consonants = alphabet \\ vowelsInner
 
 translate :: String -> String
 translate = unwords . map translateWord . words
@@ -31,7 +27,6 @@ checkStart s@(a:b:xs)
         s' = concatTuple . swap $ checkConsonant' s
         checkConsonant' s = checkConsonant s ("","")
         concatTuple (x,y) = concat (x : [y])
-
 
 checkConsonant :: String -> (String, String) -> (String, String)
 checkConsonant [] parts = parts
