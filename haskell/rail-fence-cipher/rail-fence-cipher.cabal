@@ -1,0 +1,36 @@
+-- This file has been generated from package.yaml by hpack version 0.20.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: b35dbac882b2aa74282ddc954825f5168a5904439479631cdff30070c374a01e
+
+name:           rail-fence-cipher
+version:        1.1.0.3
+build-type:     Simple
+cabal-version:  >= 1.10
+
+library
+  hs-source-dirs:
+      src
+  build-depends:
+      base
+    , matrix
+    , split
+  exposed-modules:
+      RailFenceCipher
+  other-modules:
+      Paths_rail_fence_cipher
+  default-language: Haskell2010
+
+test-suite test
+  type: exitcode-stdio-1.0
+  main-is: Tests.hs
+  hs-source-dirs:
+      test
+  build-depends:
+      base
+    , hspec
+    , rail-fence-cipher
+  other-modules:
+      Paths_rail_fence_cipher
+  default-language: Haskell2010
